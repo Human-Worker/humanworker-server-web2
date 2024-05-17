@@ -30,6 +30,15 @@ def update_user(*, session: Session, db_user: User, user_in: UserUpdate) -> Any:
     return db_user
 
 
+def update_password(*, session: Session, db_user: User, password: str) -> Any:
+    hashed_password = get_password_hash(password)
+    db_user.sqlmodel_update({"hashed_password": hashed_password})
+    session.add(db_user)
+    session.commit()
+    session.refresh(db_user)
+    return db_user
+
+
 def get_user_by_email(*, session: Session, email: str) -> User | None:
     statement = select(User).where(User.email == email)
     session_user = session.exec(statement).first()
