@@ -98,6 +98,20 @@ files = [
 ]
 
 [[package]]
+name = "casbin"
+version = "1.36.0"
+description = "An authorization library that supports access control models like ACL, RBAC, ABAC in Python"
+optional = false
+python-versions = ">=3.3"
+files = [
+    {file = "casbin-1.36.0-py3-none-any.whl", hash = "sha256:bb15d27a3d3e6d25411c954b283a509524977f94ae51af8ef3af88be20b1adb2"},
+    {file = "casbin-1.36.0.tar.gz", hash = "sha256:f43511eed6d3cd05c89c19289f9cebf899ce9e13ed4eaa9316716f8ad34ffd81"},
+]
+
+[package.dependencies]
+simpleeval = ">=0.9.11"
+
+[[package]]
 name = "certifi"
 version = "2024.2.2"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -577,6 +591,21 @@ typing-extensions = ">=4.8.0"
 
 [package.extras]
 all = ["email-validator (>=2.0.0)", "httpx (>=0.23.0)", "itsdangerous (>=1.1.0)", "jinja2 (>=2.11.2)", "orjson (>=3.2.1)", "pydantic-extra-types (>=2.0.0)", "pydantic-settings (>=2.0.0)", "python-multipart (>=0.0.7)", "pyyaml (>=5.3.1)", "ujson (>=4.0.1,!=4.0.2,!=4.1.0,!=4.2.0,!=4.3.0,!=5.0.0,!=5.1.0)", "uvicorn[standard] (>=0.12.0)"]
+
+[[package]]
+name = "fastapi-authz"
+version = "1.0.0"
+description = "An authorization middleware for FastAPI that supports ACL, RBAC, ABAC, based on PyCasbin"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "fastapi-authz-1.0.0.tar.gz", hash = "sha256:d022cefc8ec93e43d98825bafcc4ea145636b79a072bda2fc95b1051f19f608e"},
+    {file = "fastapi_authz-1.0.0-py3-none-any.whl", hash = "sha256:e8170604d2a9c487fb69fa4d358580c5b0d6398c2278d68293441117d51d0acf"},
+]
+
+[package.dependencies]
+casbin = "*"
+fastapi = "*"
 
 [[package]]
 name = "filelock"
@@ -1716,6 +1745,17 @@ testing = ["build[virtualenv]", "filelock (>=3.4.0)", "flake8-2020", "ini2toml[l
 testing-integration = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "packaging (>=23.2)", "pytest", "pytest-enabler", "pytest-xdist", "tomli", "virtualenv (>=13.0.0)", "wheel"]
 
 [[package]]
+name = "simpleeval"
+version = "0.9.13"
+description = "A simple, safe single expression evaluator library."
+optional = false
+python-versions = "*"
+files = [
+    {file = "simpleeval-0.9.13-py2.py3-none-any.whl", hash = "sha256:22a2701a5006e4188d125d34accf2405c2c37c93f6b346f2484b6422415ae54a"},
+    {file = "simpleeval-0.9.13.tar.gz", hash = "sha256:4a30f9cc01825fe4c719c785e3762623e350c4840d5e6855c2a8496baaa65fac"},
+]
+
+[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -2217,4 +2257,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "f3ffd210d9b283ed1dcd8a6144021ffd77657bd24f88aa43c8e97242975fa821"
+content-hash = "440254d32a0ba75acd6ed4e0ab992117aa881f645a18ba7668407c05d2e09c52"

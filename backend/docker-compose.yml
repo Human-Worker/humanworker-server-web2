@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  tiny_task_marketplace:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./tiny_task_marketplace.db

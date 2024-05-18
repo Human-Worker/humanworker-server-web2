@@ -1,0 +1,71 @@
+# Policy rules for admin
+p, admin, user, create
+p, admin, user, read
+p, admin, user, update
+p, admin, user, delete
+
+p, admin, client, create
+p, admin, client, read
+p, admin, client, update
+p, admin, client, delete
+
+p, admin, worker, create
+p, admin, worker, read
+p, admin, worker, update
+p, admin, worker, delete
+
+p, admin, task, create
+p, admin, task, read
+p, admin, task, update
+p, admin, task, delete
+
+p, admin, payment, create
+p, admin, payment, read
+p, admin, payment, update
+p, admin, payment, delete
+
+p, admin, rating, create
+p, admin, rating, read
+p, admin, rating, update
+p, admin, rating, delete
+
+p, admin, message, create
+p, admin, message, read
+p, admin, message, update
+p, admin, message, delete
+
+# Policy rules for client
+p, client, task, create
+p, client, task, read
+p, client, task, update
+p, client, task, delete
+
+p, client, payment, create
+p, client, payment, read
+
+p, client, rating, create
+p, client, rating, read
+p, client, rating, update
+
+p, client, message, create
+p, client, message, read
+p, client, message, update
+
+# Policy rules for worker
+p, worker, task, read
+p, worker, task, update
+
+p, worker, payment, read
+
+p, worker, rating, read
+p, worker, rating, update
+
+p, worker, message, create
+p, worker, message, read
+p, worker, message, update
+
+# Role assignments
+# g, alice, admin
+# g, bob, client
+# g, charlie, worker
+# TODO: add hooks on user creation to automatically add roles
